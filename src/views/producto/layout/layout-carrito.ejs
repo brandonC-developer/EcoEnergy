@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/CSS/carrito.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Carrito de Compras</title>
+</head>
+
+<body>
+    <header class="bg-success" style="height: 80px;">
+        <div
+            style="position: absolute; top: 20px; left: 10px; z-index: 10; text-decoration: none; color: inherit; display: inline-block;">
+            <a href="/login"><img src="public/img/arrow-left.svg" width="40px" alt=""></a>
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+            <h3>Carrito</h3>
+        </div>
+    </header>
+    <main>
+        <section id="cart" class="container my-4">
+            <% if (products.length> 0) { %>
+                <div class="row g-4">
+                    <% products.forEach(product=> { %>
+                        <div class="col-12 col-md-6 fade-in-up">
+                            <div class="">
+                                <div class="row g-0">
+                                    <div class="col-4">
+                                        <img src="<%= '/public/img/Productos/' + product.imagen %>" class="img-fluid"
+                                            alt="<%= product.nombre %>" />
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="card-body ms-3">
+                                            <h5 class="card-title text-truncate">
+                                                <%= product.nombre %>
+                                            </h5>
+                                            <p class="card-text mb-2">
+                                                <small>Precio: $<%= parseFloat(product.precio_unitario).toFixed(2) %>
+                                                </small>
+                                            </p>
+                                            <p class="card-text mb-2">
+                                                <small>Cantidad: <%= product.cantidad %></small>
+                                            </p>
+                                            <!-- <p class="card-text">
+                                                <strong>Subtotal: $<%= parseFloat(product.subtotal).toFixed(2) %>
+                                                </strong>
+                                            </p> -->
+                                            <button class="btn btn-danger btn-sm remove-from-cart"
+                                                data-id="<%= product.id_producto %>">
+                                                Eliminar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+                <div class="mt-4 text-end">
+                    <h4>Total: $<%= products.reduce((total, product)=> total + parseFloat(product.subtotal),
+                            0).toFixed(2) %></h4>
+                    <a href="/pago" class="btn btn-success">Pagar</a>
+                </div>
+                <% } else { %>
+                    <p class="text-center fade-in-up">Tu carrito está vacío.</p>
+                    <% } %>
+        </section>
+    </main>
+    <footer class="fixed-bottom bg-success">
+        &copy; 2024 - Carrito de Compras
+    </footer>
+</body>
+<script>
+    document.querySelectorAll('.remove-from-cart').forEach(button => {
+        button.addEventListener('click', async function (e) {
+            const productoId = e.target.getAttribute('data-id');
+            try {
+                const response = await fetch('/carrito/eliminarCarrito', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ id: productoId }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(data.message || 'Producto eliminado del carrito exitosamente.');
+
+                    // Opcional: elimina el producto del DOM sin recargar la página
+                    e.target.closest('.card').remove();
+
+                    // Opcional: actualizar el total del carrito
+                    const totalElement = document.querySelector('#cart p:last-child');
+                    if (totalElement) {
+                        const newTotal = await calcularNuevoTotal(); // Implementa esta función según sea necesario
+                        totalElement.textContent = `Total: $${newTotal.toFixed(2)}`;
+                    }
+                } else {
+                    const error = await response.json();
+                    alert(error.message || 'Hubo un error al eliminar el producto del carrito.');
+                }
+            } catch (err) {
+                console.error('Error al enviar la solicitud:', err);
+                alert('Error inesperado. Intenta de nuevo más tarde.');
+            }
+        });
+    });
+
+    // Función opcional para recalcular el total
+    async function calcularNuevoTotal() {
+        const subtotales = Array.from(document.querySelectorAll('.card p:nth-child(4)')).map(p =>
+            parseFloat(p.textContent.replace('Subtotal: $', ''))
+        );
+        return subtotales.reduce((sum, subtotal) => sum + subtotal, 0);
+    }
+
+</script>
+
+</html>

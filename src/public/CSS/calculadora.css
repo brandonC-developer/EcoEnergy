@@ -1,0 +1,56 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  font-family: "Poppins", Sans-serif;
+}
+.bg-image {
+  position: relative;
+  overflow: hidden;
+  background-size: cover; /* Asegura que la imagen cubra el contenedor */
+  background-position: center; /* Centra la imagen */
+  height: 100%; /* Asegura que el div tenga altura total */
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.8)
+  ); /* Degradado de transparente a negro */
+  z-index: 1;
+}
+
+.text-body-emphasis,
+.text-white {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté por encima del degradado */
+  color: white; /* Asegura que el texto sea blanco */
+}
+
+.panel {
+  display: none;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.panel.active {
+  display: block;
+}
+@media (max-width: 450px) {
+  .banner {
+    height: 30vh;
+  }
+  .form-datos {
+    height: 70vh;
+  }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header'); -%>
+    <link rel="stylesheet" href="../public/CSS/index.css" />
+    <title>Document</title>
+    </head>
+
+    <body>
+        <%- include('partials/nav'); -%>
+            <div class="row featurette">
+                <div class="container">
+                    <div class="contact__wrapper shadow-lg mt-n9">
+                        <div class="row no-gutters">
+                            <div
+                                class="col-lg-5 contact-info__wrapper bg-success bg-gradient text-white p-5 order-lg-2">
+                                <h3 class="color--white mb-5 fw-bold fs-2">Contáctanos</h3>
+
+                                <ul class="contact-info__list list-style--none position-relative z-index-101">
+                                    <li class="mb-4 pl-4 fs-6">
+                                        <span><i class="fas fa-envelope"></i></span>
+                                        support@ecoenergy.com
+                                    </li>
+                                    <li class="mb-4 pl-4 fs-6">
+                                        <span><i class="fas fa-phone"></i></span>
+                                        (506) 2756-2453
+                                    </li>
+                                    <li class="mb-4 pl-4 fs-6">
+                                        <span><i class="fas fa-map-marker-alt"></i></span>
+                                        Bootdey Technologies Inc.<br>
+                                        2694 Queen City Rainbow Drive<br>
+                                        Florida 99161
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                                <form action="#" class="contact-form form-validate" novalidate="novalidate">
+                                    <div class="row">
+                                        <div class="col-sm-6 mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="firstName">Nombre del
+                                                    Usuario:</label>
+                                                <input type="text" class="form-control" id="firstName" name="nombre"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 mb-3">
+                                            <div class="form-group">
+                                                <label for="direccion">Teléfono:</label>
+                                                <input type="tel" class="form-control" id="direccion" name="telefono"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 mb-3">
+                                            <label for="fecha">Fecha:</label>
+                                            <input type="date" id="fecha" name="fecha" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-sm-6 mb-3">
+                                            <label for="archivo" class="m-1">Adjuntar fotos o vídeos del problema
+                                                (opcional)</label>
+                                            <input type="file" id="archivo" name="archivo" class="form-control">
+                                        </div>
+
+                                        <div class="col-sm-12 mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="message">Descripción:</label>
+                                                <textarea class="form-control" id="message" name="message" rows="4"
+                                                    required></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12 mb-3">
+                                            <button type="submit" name="submit" class="btn btn-success">Enviar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,80 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+  padding-bottom: 3rem;
+  color: rgb(var(--bs-tertiary-color-rgb));
+}
+nav {
+  height: 70px;
+}
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 50vh;
+  min-height: 50vh;
+}
+
+.carrusel-size-img-others {
+  height: 20vh;
+}
+
+.font {
+  text-align: justify;
+  font-family: "Poppins", Sans-serif;
+}
+/*-------------------------------------------------- 
+                  BANNER
+  -------------------------------------------------- */
+.titulo-vlog {
+  background-color: #0a8935;
+}
+.titulo-vlog {
+  height: 43vh;
+  background-color: #0aa43e;
+}
+.titulo-vlog-a {
+  height: 40vh;
+  width: 100%;
+  background-color: #0a8935;
+}
+.titulo-vlog-b {
+  height: 5vh;
+  width: 75%;
+  background-color: #0a8935;
+}
+
+/* RESPONSIVE CSS
+  -------------------------------------------------- */
+@media (max-width: 455px) {
+  .img-vlog {
+    height: 41vh;
+    width: 100vh;
+  }
+}
+@media (orientation: landscape) {
+  .titulo-vlog {
+    background-color: #0a8935;
+  }
+  .titulo-vlog {
+    height: 73vh;
+    background-color: #0aa43e;
+  }
+  .titulo-vlog-a {
+    height: 70vh;
+    width: 100%;
+    background-color: #0a8935;
+  }
+  .titulo-vlog-b {
+    height: 5vh;
+  }
+}

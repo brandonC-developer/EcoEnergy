@@ -1,0 +1,46 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+}
+p,
+h1 {
+  color: #233b34;
+  font-family: "Poppins", Sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+.text-label {
+  color: hsl(0, 0%, 100%);
+  font-family: "Poppins", Sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: #233b34;
+}
+:root {
+  --bs-bg-opacity: 1; /* Opacidad completa (puedes cambiar este valor) */
+  --bs-dark-rgb: 35, 59, 52; /* RGB equivalente al color #233B34 */
+}
+.custom-bg {
+  color: #000;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.img-banner {
+  width: 300px;
+}
+.text {
+  text-align: justify;
+}
+.custom-border {
+  border: none;
+  border-bottom: 2px solid #c4c4c4b8; /* Puedes ajustar el grosor y el color del borde */
+  border-radius: 0; /* Para eliminar los bordes redondeados */
+}
+.custom-border:focus {
+  outline: none; /* Asegura que tampoco haya resaltado al hacer foco */
+  border-bottom: 2px solid #000; /* Puedes ajustar este valor para que no cambie el estilo al hacer foco */
+}
+.section-contact {
+  background-color: #233b34;
+}

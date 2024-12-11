@@ -1,0 +1,61 @@
+<div class="container px-4 mt-5" id="featured-3">
+    <h2 class="pb-2 border-bottom">Detalles del Producto</h2>
+    <% if (productos) { %>
+        <div class="card shadow-sm p-3 mb-5" style="border-radius: 15px; overflow: hidden;">
+            <div class="text-center mb-4">
+                <img src="<%= '/public/img/productos/' + productos.imagen %>" alt="<%= productos.nombre %>"
+                    class="img-fluid" style="max-height: 300px; object-fit: cover; border-radius: 15px;">
+            </div>
+            <h3 class="text-primary">
+                <%= productos.nombre %>
+            </h3>
+            <p><strong>Descripción:</strong></p>
+            <p>
+                <% productos.descripcion.split('\n').forEach(parrafo=> { %>
+                    <% if (parrafo.trim() !=='' ) { %>
+                        <span style="display: block; margin-bottom: 10px;">
+                            <%= parrafo.trim() %>
+                        </span>
+                        <% } %>
+                            <% }); %>
+            </p>
+            <p><strong>Precio:</strong> $<%= productos.precio %>
+            </p>
+            <p><strong>Cantidad disponible:</strong>
+                <%= productos.cantidad %>
+            </p>
+            <input class="my-2" type="number" name="cantidad" id="cantidad">
+            <button class="btn btn-primary" id="agregarCarrito" data-product-id="<%= productos.id %>">Agregar al
+                Carrito</button>
+            <input type="text" name="id" value="<%= productos.id %>" hidden id="id">
+        </div>
+        <% } else { %>
+            <p>No se encontró el producto.</p>
+            <% } %>
+</div>
+<script>
+    document.getElementById('agregarCarrito').addEventListener('click', async function (e) {
+        const productoId = e.target.getAttribute('data-product-id');
+        const cantidad = document.getElementById('cantidad').value;
+        try {
+            const response = await fetch('/carrito/agregarCarrito', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id: productoId, cantidad: cantidad }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert(data.message || 'Producto agregado al carrito exitosamente.');
+            } else {
+                const error = await response.json();
+                alert(error.message || 'Hubo un error al agregar el producto al carrito.');
+            }
+        } catch (err) {
+            console.error('Error al enviar la solicitud:', err);
+            alert('Error inesperado. Intenta de nuevo más tarde.');
+        }
+    });
+</script>

@@ -1,0 +1,70 @@
+<% if (cedula) { %>
+    <main class="form-signin bg-white text-dark shadow-lg p-4">
+        <form action="/user/datospersonal" method="post">
+            <h1 class="fw-bold text-success text-center">Datos Personales</h1>
+            <p class="fw-bold text-secondary text-center">Utilizaremos estos datos para hablarte de forma personalizada
+            </p>
+            <hr class="text-secondary">
+
+            <!-- Campo Nombre -->
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control border-0 shadow-sm" id="floatingInput"
+                    value="<%= cedula.nombre %>" name="nombre" readonly aria-label="Nombre Completo">
+                <label for="floatingInput">Nombre Completo:</label>
+            </div>
+
+            <!-- Campo Provincia -->
+            <div class="form-floating mb-4">
+                <input type="text" class="form-control border-0 shadow-sm" id="floatingProvincia" name="provincia"
+                    value="<%= provinciaName %>" readonly aria-label="Provincia">
+                <label for="floatingProvincia">Provincia:</label>
+            </div>
+
+            <!-- Campo Teléfono -->
+            <div class="form-floating mb-4">
+                <input type="tel" class="form-control border-0 shadow-sm" id="floatingTelefono" name="telefono" required
+                    pattern="[0-9]{8,15}" placeholder="Número de teléfono" aria-label="Teléfono">
+                <label for="floatingTelefono">Teléfono:</label>
+            </div>
+
+            <hr class="text-secondary">
+            <h4 class="fw-bold text-success">Preguntas por Seguridad</h4>
+            <p class="fw-bold text-secondary">Selecciona tres preguntas de seguridad. Estas preguntas nos ayudarán a
+                verificar tu identidad si olvidas tu contraseña</p>
+
+            <% const preguntas=[ "¿Cuál es el nombre de tu primera mascota?" , "¿Cuál es tu película favorita?"
+                , "¿Cuál es tu comida favorita?" , "¿Cuál es el nombre de tu maestro/a de primaria?"
+                , "¿En qué ciudad naciste?" , "¿Cuál era tu apodo en la escuela?" ]; %>
+
+                <!-- Preguntas y Respuestas -->
+                <% for (let i=1; i <=3; i++) { %>
+                    <div class="form-floating mb-1">
+                        <select name="pregunta<%= i %>" id="pregunta<%= i %>" class="form-select shadow-sm"
+                            aria-label="Pregunta de seguridad <%= i %>">
+                            <% preguntas.forEach((pregunta, index)=> { %>
+                                <option value="<%= index + 1 %>">
+                                    <%= pregunta %>
+                                </option>
+                                <% }); %>
+                        </select>
+                        <label for="pregunta<%= i %>">Pregunta de Seguridad <%= i %></label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="text" class="form-control border-0 shadow-sm" id="respuesta<%= i %>"
+                            name="respuesta<%= i %>" required aria-label="Respuesta a la pregunta <%= i %>">
+                        <label for="respuesta<%= i %>">Respuesta:</label>
+                    </div>
+                    <% } %>
+
+                        <!-- Campos ocultos -->
+                        <input type="hidden" name="cedula" value="<%= cedula.cedula %>">
+                        <input type="hidden" name="correo" value="<%= correo %>">
+                        <input type="hidden" name="psw" value="<%= psw %>">
+
+                        <!-- Botón de Enviar -->
+                        <button class="btn btn-success w-100 py-2 fw-bold shadow-sm" type="submit">Crear Cuenta</button>
+        </form>
+    </main>
+    <% } else { %>
+        <p>No hay datos disponibles</p>
+        <% } %>

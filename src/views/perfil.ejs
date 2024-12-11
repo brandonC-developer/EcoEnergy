@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header'); -%>
+    <link rel="stylesheet" href="../public/CSS/index.css" />
+    <link rel="stylesheet" href="../../public/CSS/navbar.css">
+    <link rel="stylesheet" href="../public/CSS/navbar-footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <title>Document</title>
+    </head>
+    <style>
+        p,
+        a {
+            font-size: small;
+        }
+    </style>
+
+    <body class="p-0 w-100">
+        <nav class="navbar navbar-expand-md sticky-top border-bottom bg-success">
+            <div class="container-fluid pt-2 text-white">
+                <p>
+                    Mi cuenta
+                </p>
+            </div>
+        </nav>
+        <section class="border mx-3 mt-5 p-3">
+            <h4>
+                ¡Hola!
+            </h4>
+            <!-- Primer Item -->
+            <div class="container">
+                <div class="d-inline-flex align-items-center">
+                    <a href="/cuenta" class="nav-link d-flex align-items-center">
+                        <span
+                            class="icon-container bg-success-subtle rounded-circle d-flex justify-content-center align-items-center me-2"
+                            style="width: 40px; height: 40px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg>
+                        </span>
+                        <p class="m-0">Mi perfil</p>
+                    </a>
+                </div>
+            </div>
+            <hr class="mx-1">
+
+            <!-- Tercer Item -->
+            <div class="container">
+                <div class="d-inline-flex align-items-center">
+                    <a href="/cerrar-sesion" class="nav-link d-flex align-items-center">
+                        <span
+                            class="icon-container bg-success-subtle rounded-circle d-flex justify-content-center align-items-center me-2"
+                            style="width: 40px; height: 40px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg>
+                        </span>
+                        <p class="m-0">Mis direcciones</p>
+                    </a>
+                </div>
+            </div>
+            <hr class="mx-1">
+
+            <!-- Tercer Item -->
+            <div class="container">
+                <div class="d-inline-flex align-items-center">
+                    <a href="/cerrar-sesion" class="nav-link d-flex align-items-center">
+                        <span
+                            class="icon-container bg-success-subtle rounded-circle d-flex justify-content-center align-items-center me-2"
+                            style="width: 40px; height: 40px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-filter-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                                <path
+                                    d="M6 11.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5" />
+                            </svg>
+                        </span>
+                        <p class="m-0">Historial de compras</p>
+                    </a>
+                </div>
+            </div>
+            <hr class="mx-1">
+
+            <!-- Segundo Item -->
+            <div class="container">
+                <div class="d-inline-flex align-items-center">
+                    <a href="/configuracion" class="nav-link d-flex align-items-center">
+                        <span
+                            class="icon-container bg-success-subtle rounded-circle d-flex justify-content-center align-items-center me-2"
+                            style="width: 40px; height: 40px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-gear" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 4.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zM5.5 8A2.5 2.5 0 1 0 8 10.5 2.5 2.5 0 0 0 5.5 8z" />
+                                <path
+                                    d="M8 0c-.636 0-1.11.498-1.417 1.167A7.014 7.014 0 0 0 1.167 6.583C.498 6.89 0 7.364 0 8s.498 1.11 1.167 1.417A7.014 7.014 0 0 0 6.583 14.833C6.89 15.502 7.364 16 8 16s1.11-.498 1.417-1.167A7.014 7.014 0 0 0 14.833 9.417C15.502 9.11 16 8.636 16 8s-.498-1.11-1.167-1.417A7.014 7.014 0 0 0 9.417 1.167C9.11.498 8.636 0 8 0z" />
+                            </svg>
+                        </span>
+                        <p class="m-0">Configuración</p>
+                    </a>
+                </div>
+            </div>
+            <hr class="mx-1">
+
+            <!-- Tercer Item -->
+            <div class="container">
+                <div class="d-inline-flex align-items-center">
+                    <a href="/usuario/logout" class="nav-link d-flex align-items-center">
+                        <span
+                            class="icon-container bg-success-subtle rounded-circle d-flex justify-content-center align-items-center me-2"
+                            style="width: 40px; height: 40px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M10.146 11.354a.5.5 0 0 1 0-.708L12.793 8l-2.647-2.646a.5.5 0 0 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M4.5 8a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
+                                <path fill-rule="evenodd"
+                                    d="M1 4.5A1.5 1.5 0 0 1 2.5 3h9A1.5 1.5 0 0 1 13 4.5v7A1.5 1.5 0 0 1 11.5 13h-9A1.5 1.5 0 0 1 1 11.5v-7zM2.5 4a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5h-9z" />
+                            </svg>
+                        </span>
+                        <p class="m-0">Cerrar sesión</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-3 pt-3">
+            <a class="text-dark" href="">Solicirud de eliminar cuenta</a>
+            <div>
+                <h5 class="my-4">Conocenos</h5>
+                <a class="text-dark" href="">
+                    <p>Terminos y Condiciones</p>
+                </a>
+                <a class="text-dark" href="">
+                    <p>Politicas de Privacidad</p>
+                </a>
+                <a class="text-dark" href="">
+                    <p>Politicas de cancelacion y reembolso</p>
+                </a>
+
+            </div>
+            <div>
+                <h5 class="my-4">¿Necesitas ayuda?</h5>
+                <a class="text-dark" href="">
+                    <p>Escribenos</p>
+                </a>
+
+            </div>
+        </section>
+        <main class="w-100">
+            <%- include('partials/footer'); %>
+        </main>
+    </body>
+
+</html>

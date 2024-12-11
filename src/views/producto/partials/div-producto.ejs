@@ -1,0 +1,38 @@
+<div class="container px-3 mt-5" id="productos">
+    <div class="row row-cols-2 g-3">
+        <% if (productos && productos.length> 0) { %>
+            <% productos.forEach(producto=> { %>
+                <div class="col">
+                    <div class="h-100">
+                        <!-- Imagen del producto -->
+                        <a href="catalogo/producto/<%= producto.id %>" style="text-decoration: none;">
+                            <img src="<%= '../public/img/Productos/' + producto.imagen %>" class=" w-100"
+                                style=" height: 150px;" alt="<%= producto.nombre %>">
+                        </a>
+                        <!-- Información del producto -->
+                        <div class="text-center">
+                            <div class="price-banner text-center py-2">
+                                <h6 class="fw-semibold text-black mb-0">
+                                    $<%= producto.precio %>
+                                </h6>
+                                <svg class="lightning-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"
+                                    preserveAspectRatio="none">
+                                    <polygon points="0,0 60,0 40,50 100,50 100,0" fill="#198754" />
+                                    <polygon points="0,50 40,50 60,0 0,0" fill="#f8f9fa" />
+                                </svg>
+                            </div>
+
+                            <div class="p-2">
+                                <p class="fw-bold mb-1 text-truncate">
+                                    <%= producto.nombre %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+                    <% } else { %>
+                        <p class="text-center">No hay productos disponibles en este momento.</p>
+                        <% } %>
+    </div>
+</div>

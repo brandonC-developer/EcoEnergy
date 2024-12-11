@@ -1,0 +1,54 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+  padding-bottom: 3rem;
+  color: rgb(var(--bs-tertiary-color-rgb));
+}
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 50vh;
+  min-height: 50vh;
+}
+
+.carrusel-size-img-others {
+  height: 20vh;
+}
+
+.col-size img {
+  height: 190px;
+}
+.logo-img {
+  width: 200px;
+  height: 200px;
+}
+.font {
+  text-align: justify;
+  font-family: "Poppins", Sans-serif;
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (max-width: 390px) {
+  .col-size {
+    width: 350px;
+  }
+}
+@media (orientation: landscape) {
+  .container {
+    margin-top: 200px;
+  }
+  .col-size {
+    height: 400px;
+  }
+}
+/* Agregar más estilos como .banner-about-img y .featurette-heading como sea necesario */

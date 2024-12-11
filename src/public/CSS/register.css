@@ -1,0 +1,161 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+.banner-menu {
+  display: flex; /* Cambiado a flex para alinear correctamente */
+  align-items: center;
+}
+body {
+  font-family: "Alexandria", sans-serif;
+  background-color: rgba(235, 235, 235, 0.322);
+}
+h1,
+p,
+h2,
+label,
+button,
+a {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  height: 100%;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  border-radius: 25px;
+  padding: 0.75rem 1.5rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+a {
+  font-size: 0.9rem;
+}
+
+input {
+  padding: 0.75rem;
+  border-radius: 15px;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.g-recaptcha {
+  transform: scale(0.85);
+  transform-origin: center;
+}
+
+/* Solución para evitar el fondo amarillo */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+  /* Color de fondo personalizado */
+  -webkit-text-fill-color: #fff !important;
+  /* Color del texto */
+}
+
+input.no-autocomplete {
+  background-color: #ffffff !important;
+  /* Color de fondo */
+}
+#arrow {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centramos el contenido dentro del arrow */
+}
+
+.container-register {
+  height: 100vh; /* Mantener la altura completa */
+  display: flex; /* Alineación del contenido */
+  align-items: center;
+  justify-content: center; /* Alineación central horizontal */
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 10px;
+}
+
+#message p {
+  padding: 5px 25px;
+  font-size: 15px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+/* Ajustes para pantallas menores de 1000px */
+@media (max-width: 1000px) {
+  .banner-menu {
+    height: 80px; /* Reducir la altura del banner en pantallas más pequeñas */
+  }
+
+  #arrow {
+    width: 10%; /* Hacer el arrow más grande en pantallas pequeñas */
+    margin-left: 5%;
+    border-color: azure;
+  }
+}
+
+/* Ajustes en orientación horizontal */
+@media (orientation: landscape) {
+  .banner-menu {
+    height: 80px; /* Reducir aún más el banner en modo horizontal */
+  }
+
+  .container-register {
+    margin-top: 50px; /* Ajustar el margen para que el formulario no quede oculto */
+  }
+
+  #arrow {
+    width: 5%; /* Ajustar tamaño de arrow en modo horizontal */
+  }
+}

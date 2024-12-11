@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header'); -%>
+  <link rel="stylesheet" href="../public/CSS/index.css" />
+  <title>Document</title>
+  </head>
+
+  <body>
+    <%- include('partials/nav'); -%>
+      <main>
+        <div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active carrusel-size-video">
+              <video class="position-absolute w-100 h-100" src="../public/media/Hero_greenenergy_Website_low_-final.mp4"
+                style="object-fit: cover" loop muted></video>
+              <div class="container mb-5">
+                <div class="carousel-caption m-0 p-0">
+                  <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px">
+                    Energia Renovables
+                  </h4>
+                  <h3 class="display-2 font-secondary text-white mb-4">
+                    Energia limpia
+                  </h3>
+                  <h3 class="display-2 font-secondary text-white mb-4">
+                    Futuro sostenible
+                  </h3>
+                  <p>
+                    <a class="btn btn-lg btn-success" href="/nosotros">Contactanos</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marketing messaging and featurettes
+    ================================================== -->
+        <!-- Wrap the rest of the page in another container to center all the content. -->
+
+        <div class="container marketing">
+          <h2 class="pb-2 border-bottom fw-bold text-success">Conozca nuestros servicios</h2>
+          <div class="row mb-3 text-center">
+
+            <div class="col-6 col-sm-6 col-md-4 themed-grid-col pb-3">
+              <div class="card shadow-sm h-100">
+                <div class="position-relative h-100">
+                  <img src="../public/img/sistemas-paneles.jpg" alt="" class="card-img-top rounded h-100"
+                    style="filter: brightness(70%);">
+                  <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                    <h5>Diseño e instalación</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-sm-4 themed-grid-col mb-3">
+              <div class="card shadow-sm h-100">
+                <div class="position-relative h-100">
+                  <img src="../public/img/sistema-de-almacenamiento.jpg" alt="" class="card-img-top rounded h-100"
+                    style="filter: brightness(70%);">
+                  <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                    <h5>Sistema de Almacenamiento</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-sm-4 themed-grid-col mb-3">
+              <div class="card shadow-sm h-100">
+                <div class="position-relative h-100">
+                  <img src="../public/img/certificacion-iso-50001-avolta-770x500.webp" alt=""
+                    class="card-img-top rounded h-100" style="filter: brightness(70%);">
+                  <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                    <h5>Consultoría</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-sm-4 themed-grid-col mb-3">
+              <div class="card shadow-sm h-100">
+                <div class="position-relative h-100">
+                  <img src="../public/img/mantenimiento.png" alt="" class="card-img-top rounded h-100"
+                    style="filter: brightness(70%);">
+                  <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                    <h5>Mantenimiento</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+
+        <!-- Three columns of text below the carousel -->
+        <div id="energyCarousel p-5 m-5" class="carousel slide" data-bs-ride="carousel">
+          <!-- Indicadores -->
+          <ol class="carousel-indicators">
+            <li data-bs-target="#energyCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#energyCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#energyCarousel" data-bs-slide-to="2"></li>
+          </ol>
+
+          <!-- Carrusel de elementos -->
+          <div class="carousel-inner text-center p-5 m-0">
+            <!-- Item 1 - Residencial -->
+            <div class="carousel-item active">
+              <div class="card-container">
+                <img class="card-img img-fluid" src="../public/img/eco-home.png" alt="Residencial">
+                <h2 class="fw-normal mt-3">Residencial</h2>
+                <p class="text-muted">
+                  Sistemas solares conectados a la red o autónomos. Permiten ahorrar hasta un 90% de su costo de
+                  electricidad,
+                  respaldar por horas las cargas importantes en caso de apagón. Cargar su vehículo eléctrico, agua,
+                  iluminar, etc.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2 - Comercial e Industrial -->
+            <div class="carousel-item">
+              <div class="card-container">
+                <img class="card-img img-fluid" src="../public/img/eco-industrial.jpg" alt="Comercial e Industrial">
+                <h2 class="fw-normal mt-3">Comercial e Industrial</h2>
+                <p class="text-muted">
+                  Reduzca su factura eléctrica hasta un 90% y mejore la calidad de la energía. Iluminación solar
+                  autónoma
+                  perimetral (parqueos, calles internas o áreas verdes). Iluminación LED de alta eficiencia y control.
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 3 - Agro -->
+            <div class="carousel-item">
+              <div class="card-container">
+                <img class="card-img img-fluid" src="../public/img/eco-agro.png" alt="Agro">
+                <h2 class="fw-normal mt-3">Agro</h2>
+                <p class="text-muted">
+                  Mitigación y Adaptación a cambio climático por energía solar. Iluminación de carreteras. Respaldo
+                  eléctrico
+                  prolongado limpio, seguro y eficiente. Reducción factura eléctrica y estudios de asesoría en energía
+                  solar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="container">
+            <div class="contact__wrapper shadow-lg mt-n9">
+              <div class="row no-gutters">
+                <div class="col-lg-5 contact-info__wrapper bg-success bg-gradient text-white p-5 order-lg-2">
+                  <h3 class="color--white mb-5 fw-bold fs-2">Contactanos</h3>
+
+                  <ul class="contact-info__list list-style--none position-relative z-index-101 ">
+                    <li class="mb-4 pl-4 fs-5">
+                      <span class="position-absolute"><i class="fas fa-envelope"></i></span> support@ecoenergy.com
+                    </li>
+                    <li class="mb-4 pl-4 fs-5">
+                      <span class="position-absolute"><i class="fas fa-phone"></i></span> (506)2756-2453
+                    </li>
+                    <li class="mb-4 pl-4 fs-5">
+                      <span class="position-absolute"><i class="fas fa-map-marker-alt"></i></span> bootdey Technologies
+                      Inc.
+                      <br> 2694 Queen City Rainbow Drive
+                      <br> Florida 99161
+
+                      <div class="mt-3">
+                        <a href="https://www.google.com/maps" target="_blank"
+                          class="text-link link--right-icon text-white">Get directions <i
+                            class="link__icon fa fa-directions"></i></a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                  <form action="#" class="contact-form form-validate" novalidate="novalidate">
+                    <div class="row">
+                      <div class="mb-3">
+                        <div class="form-group">
+                          <label class="required-field" for="firstName">Tipo de Servicio</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="1" disabled selected>None</option>
+                            <option value="2">Comercial</option>
+                            <option value="3">Residencial</option>
+                            <option value="4">Industrial</option>
+                            <option value="5">Mantenimiento</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 mb-3">
+                        <div class="form-group">
+                          <label class="required-field" for="firstName">Nombre</label>
+                          <input type="text" class="form-control" id="firstName" name="nombre">
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 mb-3">
+                        <div class="form-group">
+                          <label for="lastName">Apellido</label>
+                          <input type="text" class="form-control" id="lastName" name="apellido">
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 mb-3">
+                        <div class="form-group">
+                          <label class="required-field" for="email">Correo</label>
+                          <input type="text" class="form-control" id="email" name="correo">
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6 mb-3">
+                        <div class="form-group">
+                          <label for="phone">Numero de Telefono</label>
+                          <input type="tel" class="form-control" id="phone" name="telefono">
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <div class="form-group">
+                          <label for="phone">Consumo de la Factura</label>
+                          <select class="form-select" aria-label="Default select example">
+                            <option value="1" disabled selected>None</option>
+                            <option value="2">Menos ₡50.000</option>
+                            <option value="3">Entre ₡50.000 y ₡200.000</option>
+                            <option value="4">Entre ₡200.000 y ₡500.000</option>
+                            <option value="5">Entre ₡500.000 y ₡1.000.000</option>
+                            <option value="6">Mas de ₡1.000.000</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <div class="form-group">
+                          <label for="phone">Distribuidora Electrica</label>
+                          <input type="text" class="form-control" id="phone" name="telefono">
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12 mb-3">
+                        <div class="form-group">
+                          <label class="required-field" for="message">Asunto</label>
+                          <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-12 mb-3">
+                        <button type="submit" name="submit" class="btn btn-success">Enviar</button>
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+                <!-- End Contact Form Wrapper -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <!-- /END THE FEATURETTES -->
+        </div>
+        <!-- /.container -->
+
+        <!-- FOOTER -->
+        <footer class="container">
+          <p class="float-end"><a href="#">Back to top</a></p>
+          <p>
+            © 2017–2024 Company, Inc. · <a href="#">Privacy</a> ·
+            <a href="#">Terms</a>
+          </p>
+        </footer>
+      </main>
+  </body>
+
+</html>

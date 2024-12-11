@@ -1,0 +1,105 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+  background-color: #e8f5e9;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.banner {
+  background-color: #388e3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+body {
+  background-color: #e8f5e9;
+}
+
+h1,
+h3 {
+  color: #2e7d32;
+}
+
+.btn-primary {
+  background-color: #388e3c;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #2e7d32;
+}
+
+.banner {
+  background-color: #388e3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+h1,
+h3 {
+  color: #2e7d32;
+}
+
+.list-group-item {
+  border: none;
+  background-color: #f1f8e9;
+  transition: transform 0.3s ease-in-out;
+}
+
+.list-group-item:hover {
+  transform: scale(1.02);
+}
+
+.btn-primary {
+  background-color: #388e3c;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #2e7d32;
+  transform: scale(1.1);
+}
+
+.form-control:focus {
+  border-color: #388e3c;
+  box-shadow: 0 0 4px rgba(56, 142, 60, 0.6);
+}
+
+.form-select:focus {
+  border-color: #388e3c;
+  box-shadow: 0 0 4px rgba(56, 142, 60, 0.6);
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

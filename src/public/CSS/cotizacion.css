@@ -1,0 +1,60 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+}
+.banner-menu {
+  display: flex; /* Cambiado a flex para alinear correctamente */
+  align-items: center;
+}
+
+#arrow {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centramos el contenido dentro del arrow */
+}
+
+.container-register {
+  height: 100vh; /* Mantener la altura completa */
+  display: flex; /* Alineación del contenido */
+  align-items: center;
+  justify-content: center; /* Alineación central horizontal */
+}
+.custom-border {
+  border: none;
+  border-bottom: 2px solid #c4c4c4b8; /* Puedes ajustar el grosor y el color del borde */
+  border-radius: 0; /* Para eliminar los bordes redondeados */
+}
+.custom-border:focus {
+  outline: none; /* Asegura que tampoco haya resaltado al hacer foco */
+  border-bottom: 2px solid #000; /* Puedes ajustar este valor para que no cambie el estilo al hacer foco */
+}
+
+/* Ajustes para pantallas menores de 1000px */
+@media (max-width: 1000px) {
+  .banner-menu {
+    height: 80px; /* Reducir la altura del banner en pantallas más pequeñas */
+  }
+
+  #arrow {
+    width: 10%; /* Hacer el arrow más grande en pantallas pequeñas */
+    margin-left: 5%;
+    border-color: azure;
+  }
+}
+
+/* Ajustes en orientación horizontal */
+@media (orientation: landscape) {
+  .banner-menu {
+    height: 80px; /* Reducir aún más el banner en modo horizontal */
+  }
+
+  .container-register {
+    margin-top: 50px; /* Ajustar el margen para que el formulario no quede oculto */
+  }
+
+  #arrow {
+    width: 5%; /* Ajustar tamaño de arrow en modo horizontal */
+  }
+}

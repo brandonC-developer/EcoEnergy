@@ -1,0 +1,24 @@
+section id="cart">
+    <h2>Carrito de Compras</h2>
+    <% if (products.length> 0) { %>
+        <% products.forEach(product=> { %>
+            <div class="card">
+                <h3>
+                    <%= product.nombre %>
+                </h3>
+                <p>Precio Unitario: $<%= parseFloat(product.precio_unitario).toFixed(2) %>
+                </p>
+                <p>Cantidad: <%= product.cantidad %>
+                </p>
+                <p>Subtotal: $<%= parseFloat(product.subtotal).toFixed(2) %>
+                </p>
+                <button class="remove-from-cart" data-id="<%= product.id_producto %>">Eliminar</button>
+            </div>
+            <% }) %>
+                <p>Total: $<%= products.reduce((total, product)=> total + parseFloat(product.subtotal), 0).toFixed(2) %>
+                </p>
+                <% } else { %>
+                    <p>Tu carrito está vacío.</p>
+                    <% } %>
+</section> 
+

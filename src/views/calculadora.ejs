@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Provincias de Costa Rica</title>
+    <link rel="stylesheet" href="/public/CSS/calculadora.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <%- include('partials/nav-usuario'); -%>
+        <main>
+            <div class="container">
+                <div class="row mb-3">
+                    <div class="col-md-5 p-0">
+                        <div class="p-4 p-md-5 mb-4 text-body-emphasis bg-body-secondary bg-image"
+                            style="background-image: url('../public/img/calculo-banner.png');">
+                            <div class="bg-overlay"></div>
+                            <div class="col-lg-6 px-0 text-white w-100">
+                                <h1 class="display-6">Calculadora Paneles Solares</h1>
+                                <p class="lead my-3">Haz tu cálculo de paneles solares para saber cuánto puedes ahorrar
+                                    con
+                                    la
+                                    energía solar en tu consumo eléctrico y emisiones de CO₂.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contenido principal del panel -->
+                    <div class="col-md-7 p-3 bg-light rounded">
+
+                        <!-- Contenido principal PANEL 1 -->
+                        <div class="panel active h-100 mb-4" id="panel1">
+                            <h2 class="h4">Ingresa tu dirección</h2>
+                            <form id="searchForm" class="mb-3">
+                                <div class="mb-3">
+                                    <label for="provincias" class="form-label">Provincia:</label>
+                                    <select id="provincias" class="form-select" onchange="actualizarCantones()">
+                                        <option value="">Seleccione una provincia</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cantones" class="form-label">Cantón:</label>
+                                    <select id="cantones" class="form-select" onchange="actualizarDistritos()">
+                                        <option value="">Seleccione un cantón</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="distritos" class="form-label">Distrito:</label>
+                                    <select id="distritos" class="form-select">
+                                        <option value="">Seleccione un distrito</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn-success">Buscar</button>
+                            </form>
+                            <div id="coordinates" class="mb-3" style="display: none;">
+                                <p id="latitude" class="fw-bold"></p>
+                                <p id="longitude" class="fw-bold"></p>
+                            </div>
+                            <!-- Mapa -->
+                            <div id="map" style="height: 400px; width: 100%;" class="mb-3"></div>
+
+                            <button class="btn btn-outline-success" onclick="cambiarPanel(2)">Continuar</button>
+                        </div>
+                        <!-- Contenido principal PANEL 3 -->
+                        <div class="panel active h-100 mb-4" id="panel2">
+                            <h2 class="h4">Selecciona empresa proveedora</h2>
+                            <form id="tarifaForm" class="mb-3">
+                                <div class="mb-3">
+                                    <label for="empresa" class="form-label">Empresa:</label>
+                                    <select id="empresa" class="form-select" onchange="actualizarTarifa()">
+                                        <option value="">Seleccione un proveedora</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tipoTarifa" class="form-label">Tipo de Tarifa:</label>
+                                    <select id="tipoTarifa" class="form-select" onchange="actualizarPrecio()">
+                                        <option value="">Seleccione una tarifa</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="consumo" class="form-label">Ingresa el consumo (kWh):</label>
+                                    <input type="number" id="consumo" class="form-control" disabled required>
+                                </div>
+                                <div class="mb-3" hidden>
+                                    <label for="tarifa" class="form-label">Tarifa seleccionada (₡):</label>
+                                    <input type="number" id="tarifa" class="form-control" readonly>
+                                </div>
+                            </form>
+                            <button type="submit" class="btn btn-success" onclick="cambiarPanel(3)">Continuar</button>
+                            <button class="btn btn-outline-success" onclick="cambiarPanel(1)">Anterior</button>
+
+                        </div>
+                        <!-- Contenido principal PANEL 2 -->
+                        <div class="panel h-100 mb-4" id="panel3">
+                            <h2 class="h4">Calcula la Energía Total</h2>
+                            <form id="solarForm" class="mb-3">
+                                <div class="mb-3">
+                                    <label for="area" class="form-label">Superficie del panel (m²):</label>
+                                    <input type="number" id="area" name="area" class="form-control" required>
+                                </div>
+                                <button type="submit" class="btn btn-success">Calcular Energía Total</button>
+                            </form>
+                            <button class="btn btn-outline-success" onclick="cambiarPanel(2)">Anterior</button>
+
+                            <!-- Div para mostrar el resultado -->
+                            <div id="result" class="mt-3"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Scripts -->
+        <script src="/public/JS/mapa.js"></script>
+        <script src="/public/JS/api.js"></script>
+        <script src="/public/JS/calculadora.js"></script>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</body>
+
+</html>

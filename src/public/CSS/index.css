@@ -1,0 +1,88 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+html,
+body {
+  font-family: 'Alexandria', sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: calc(
+    100vh - [altura del footer]
+  ); /* Esto asegura que el contenido principal ocupe el espacio disponible */
+}
+body {
+  padding-bottom: 60px; /* Ajusta el tamaño al alto del footer */
+  color: rgb(var(--bs-tertiary-color-rgb));
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 50vh;
+  min-height: 50vh;
+}
+
+.carrusel-size-img-others {
+  height: 20vh;
+}
+
+/* Hacer sticky el menú */
+.sticky-top {
+  position: sticky;
+}
+
+.mobile-bottom-nav {
+  height: 60px; /* Ajusta a un tamaño razonable */
+  padding: 0; /* Reduce el espacio interno si es necesario */
+}
+footer {
+  height: 60px; /* Ajusta según tus necesidades */
+  overflow: hidden; /* Oculta contenido extra */
+}
+footer a {
+  font-size: 0.875rem; /* Tamaño reducido */
+}
+
+footer i {
+  font-size: 20px; /* Ajustar tamaño del ícono */
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (max-width: 992px) {
+  .img-size-logo {
+    width: 30vh;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 576px) {
+  .mobile-bottom-nav {
+    height: 50px; /* Ajusta el tamaño para pantallas pequeñas */
+  }
+}
+
+@media (orientation: landscape) {
+  .container {
+    margin-top: 200px;
+  }
+}
+/* Agregar más estilos como .banner-about-img y .featurette-heading como sea necesario */

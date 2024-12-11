@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header'); -%>
+    <link rel="stylesheet" href="../public/CSS/register.css">
+    <script src="../public/JS/metodos-login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Registro</title>
+    </head>
+
+    <body class="text-light">
+        <!-- Contenido principal -->
+        <section class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+            <div class="container px-4 ">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <div class="card sesion text-dark border-0 shadow-sm rounded-3 mb-5 pb-5">
+                            <div class="card-body p-4">
+                                <h2 class="h5 text-center mb-4">Crear cuenta</h2>
+                                <form action="/user/enviarCorreo" method="get" onsubmit="return confirmarClave();">
+                                    <!-- Correo -->
+                                    <div class="mb-4">
+                                        <label for="email" class="form-label">Correo</label>
+                                        <input type="email" class="form-control" id="email" name="correo"
+                                            placeholder="Ingrese su correo" required>
+                                    </div>
+
+                                    <!-- Contraseña -->
+                                    <div class="mb-4">
+                                        <label for="psw" class="form-label">Contraseña</label>
+                                        <input type="password" class="form-control" id="psw" name="psw"
+                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{14,}"
+                                            title="Debe tener entre 14 y 20 caracteres, incluir al menos una letra mayúscula, una letra minúscula, un número y un carácter especial."
+                                            required>
+                                        <small class="text-muted">Debe tener entre 14 y 20 caracteres, con al menos una
+                                            letra mayúscula, una minúscula, un número y un carácter especial.</small>
+                                    </div>
+
+                                    <!-- Confirmar Contraseña -->
+                                    <div class="mb-4">
+                                        <label for="confirmPsw" class="form-label">Confirmar Contraseña</label>
+                                        <input type="password" class="form-control" id="confirmPsw" name="confirmPass"
+                                            placeholder="Confirme su contraseña" required>
+                                    </div>
+
+                                    <!-- Cédula -->
+                                    <div class="mb-5">
+                                        <label for="cedula" class="form-label">Cédula</label>
+                                        <input type="number" class="form-control" id="cedula" name="cedula"
+                                            placeholder="Ingrese su cédula" required>
+                                    </div>
+
+                                    <!-- Botón de Continuar -->
+                                    <div class="d-grid gap-2 mb-3">
+                                        <button class="btn btn-success fw-bold" type="submit">Continuar</button>
+                                    </div>
+                                </form>
+
+                                <!-- Enlace para Iniciar Sesión -->
+                                <div class="text-center mt-3">
+                                    <a href="/" class="text-success text-decoration-none fw-bold">¿Ya tienes
+                                        cuenta? Inicia sesión</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="../public/JS/validacionpass.js"></script>
+    </body>
+
+</html>

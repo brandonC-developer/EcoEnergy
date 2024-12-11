@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/header'); -%>
+        <link rel="stylesheet" href="../public/CSS/register.css">
+        <script src="../public/JS/recuperar.js"></script>
+        <title>Recuperación de Cuenta</title>
+        <style>
+            .center-vertical {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .valid {
+                color: green;
+            }
+
+            .invalid {
+                color: red;
+            }
+        </style>
+</head>
+
+<body class="m-0 p-0">
+    <div class="banner-menu">
+        <a id="arrow" href="/recuperar">
+            <img src="../public/img/arrow-left.svg" width="200" alt="Back">
+        </a>
+    </div>
+    <% if (cedula) { %>
+        <main class="form-signin bg-white w-100 p-4">
+            <form action="/recuperar/form_cambiar_clave" method="post" onsubmit="return confirmarClave();">
+                <h1 class="fw-bold text-success pb-3">Recuperación de Cuenta</h1>
+                <p class="text-light font-bold">Para restablecer la contraseña, escribe tu nueva contraseña:</p>
+
+                <!-- Campo para Contraseña con botón de visibilidad -->
+                <div class="form-floating mb-4 position-relative">
+                    <input type="password" class="form-control" id="psw" name="psw" required>
+                    <label for="psw">Contraseña:</label>
+                    <button type="button" onclick="togglePasswordVisibility('psw')"
+                        class="position-absolute end-0 me-3 btn btn-sm btn-outline-secondary center-vertical">
+                        Mostrar
+                    </button>
+                </div>
+
+                <div class="text-danger" id="message">
+                    <h3>La contraseña debe contener:</h3>
+                    <ul>
+                        <li id="letter" class="invalid">Una <b>letra</b> minúscula</li>
+                        <li id="capital" class="invalid">Una <b>letra</b> mayúscula</li>
+                        <li id="number" class="invalid">Un <b>número</b></li>
+                        <li id="length" class="invalid">Entre <b>14 y 20 caracteres</b></li>
+                        <li id="special" class="invalid">Un <b>carácter especial</b></li>
+                    </ul>
+                </div>
+
+                <!-- Campo para Confirmar Contraseña con botón de visibilidad -->
+                <div class="form-floating mb-4 position-relative">
+                    <input type="password" class="form-control" id="confirmPsw" name="confirmPass" required>
+                    <label for="confirmPsw">Confirmar Contraseña:</label>
+                    <button type="button" onclick="togglePasswordVisibility('confirmPsw')"
+                        class="position-absolute end-0 me-3 btn btn-sm btn-outline-secondary center-vertical">
+                        Mostrar
+                    </button>
+                </div>
+
+                <!-- Campo oculto para almacenar cedula -->
+                <input type="hidden" id="cedula" name="cedula" value="<%= cedula %>">
+
+                <hr class="text-light">
+
+                <!-- Botón de Envío -->
+                <button class="btn btn-success w-100 py-2 fw-bold" type="submit">Recuperar Cuenta</button>
+            </form>
+        </main>
+        <% } else { %>
+            <p>No hay datos disponibles</p>
+            <% } %>
+                <script src="../public/JS/passwordToggle.js"></script>
+                <script src="../public/JS/validacionpass.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+}
+#productos .card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#productos .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#productos img {
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+#productos h5 {
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+#productos p {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}

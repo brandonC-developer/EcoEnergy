@@ -1,0 +1,31 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+}
+.cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.cart-container a {
+  color: #28a745;
+  text-decoration: none;
+  position: relative;
+}
+
+.cart-container a:hover {
+  color: #218838;
+}
+
+#cart-count {
+  font-size: 0.8rem;
+  padding: 5px;
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Pago</title>
+    <style>
+        @import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+        body {
+            font-family: "Alexandria", sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .card-input {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .btn-primary:hover {
+            background-color: #45a049;
+            border-color: #45a049;
+        }
+
+        .banner {
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .alert-success {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Banner del tipo de cambio -->
+    <header>
+        <div class="banner bg-success">
+            Tipo de cambio del dólar: Compra $<%= parseFloat(tipoCambio.compra).toFixed(2) %> - Venta $<%=
+                    parseFloat(tipoCambio.venta).toFixed(2) %>
+        </div>
+    </header>
+
+    <!-- Contenido de la página -->
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Pago</h1>
+        <div class="row g-4">
+            <!-- Detalles del pedido -->
+            <div class="col-md-6">
+                <div class="card-input">
+                    <h3 class="mb-3">Detalles del pedido</h3>
+                    <ul class="list-group mb-3">
+                        <% products.forEach(product=> { %>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <%= product.nombre %>
+                                </span>
+                                <span class="text-muted">$<%= parseFloat(product.precio_unitario).toFixed(2) %></span>
+                            </li>
+                            <% }) %>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <strong>Total</strong>
+                                    <strong>$<%= products.reduce((total, product)=> total +
+                                            parseFloat(product.subtotal), 0).toFixed(2) %></strong>
+                                </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Formulario de tarjeta de crédito -->
+            <div class="col-md-6">
+                <div class="card-input">
+                    <h3 class="mb-3">Datos de pago</h3>
+                    <form id="payment-form">
+                        <div class="mb-3">
+                            <label for="card-number" class="form-label">Número de Tarjeta</label>
+                            <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456"
+                                maxlength="19" required>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="expiry-date" class="form-label">Fecha de Expiración</label>
+                                <input type="text" id="expiry-date" class="form-control" placeholder="MM/AA"
+                                    maxlength="5" required>
+                            </div>
+                            <div class="col">
+                                <label for="cvv" class="form-label">CVV</label>
+                                <input type="password" id="cvv" class="form-control" placeholder="123" maxlength="3"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cardholder-name" class="form-label">Nombre del Titular</label>
+                            <input type="text" id="cardholder-name" class="form-control" placeholder="Nombre Completo"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Pagar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert de compra exitosa -->
+    <div class="alert alert-success d-none" id="success-alert">
+        ¡Pago realizado con éxito!
+    </div>
+
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Simular la compra exitosa
+            const alert = document.getElementById('success-alert');
+            alert.classList.remove('d-none');
+
+            // Ocultar la alerta después de 3 segundos
+            setTimeout(() => {
+                alert.classList.add('d-none');
+            }, 3000);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

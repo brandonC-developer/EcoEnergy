@@ -1,0 +1,65 @@
+@import url(https://fonts.bunny.net/css?family=alexandria:400);
+
+body {
+  font-family: "Alexandria", sans-serif;
+  padding-bottom: 3rem;
+  color: rgb(var(--bs-tertiary-color-rgb));
+}
+
+.bg-image {
+  position: relative;
+  overflow: hidden;
+  background-size: cover; /* Asegura que la imagen cubra el contenedor */
+  background-position: center; /* Centra la imagen */
+  height: 100%; /* Asegura que el div tenga altura total */
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.8)
+  ); /* Degradado de transparente a negro */
+  z-index: 1;
+}
+
+.text-body-emphasis,
+.text-white {
+  position: relative;
+  z-index: 2; /* Asegura que el texto esté por encima del degradado */
+  color: white; /* Asegura que el texto sea blanco */
+}
+
+/* Para asegurarte de que el div tenga la altura deseada */
+.h-md-250 {
+  height: 250px; /* Ajusta esto según tus necesidades */
+}
+
+/* RESPONSIVE CSS
+  -------------------------------------------------- */
+@media (max-width: 992px) {
+  .container {
+    max-width: 100% !important;
+    margin: 1% 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .nav-item .icon {
+    display: none; /* Ocultar íconos en pantallas grandes */
+  }
+}
+
+@media (max-width: 992px) {
+  .img-size-logo {
+    width: 30vh;
+    padding: 0 10px;
+  }
+}
+
+/* Agregar más estilos como .banner-about-img y .featurette-heading como sea necesario */

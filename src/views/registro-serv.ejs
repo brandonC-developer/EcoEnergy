@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/header'); -%>
+    <link rel="stylesheet" href="../public/CSS/index.css" />
+    <title>Document</title>
+    </head>
+
+    <body>
+        <%- include('partials/nav'); -%>
+            <div class="row featurette">
+                <div class="container">
+                    <div class="contact__wrapper shadow-lg mt-n9">
+                        <div class="row no-gutters">
+
+                            <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+                                <form action="#" class="contact-form form-validate" novalidate="novalidate">
+                                    <div class="row">
+
+                                        <div class="col-sm-6 mb-3">
+                                            <label for="fecha">Fecha:</label>
+                                            <input type="date" id="fecha" name="fecha" class="form-control" required>
+                                        </div>
+
+                                        <div class="col-sm-6 mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="firstName">Nombre del Tecnico
+                                                    :</label>
+                                                <input type="text" class="form-control" id="firstName" name="nombre"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="firstName">Tipo de Servicio</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1" disabled selected>None</option>
+                                                    <option value="2">Comercial</option>
+                                                    <option value="3">Residencial</option>
+                                                    <option value="4">Industrial</option>
+                                                    <option value="5">Mantenimiento</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 mb-3">
+                                            <label for="archivo" class="m-1">Adjuntar fotos o vídeos</label>
+                                            <input type="file" id="archivo" name="archivo" class="form-control">
+                                        </div>
+
+                                        <div class="col-sm-12 mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="message">Descripción:</label>
+                                                <textarea class="form-control" id="message" name="message" rows="4"
+                                                    required></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 mb-3">
+                                            <div class="form-group">
+                                                <label class="required-field" for="firstName">Costo (si aplica) :</label>
+                                                <input type="number" class="form-control" id="firstName" name="costo"
+                                                    required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12 mb-3">
+                                            <button type="submit" name="submit" class="btn btn-success">Enviar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </body>
+
+</html>

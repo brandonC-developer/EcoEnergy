@@ -1,0 +1,23 @@
+<main class="form-signin bg-white m-3 p-4 rounded shadow-lg">
+    <form id="recuperacionForm" onsubmit="return verificacionCaptcha(event);">
+        <!-- Título -->
+        <h1 class="fw-bold text-success pb-3">Recuperación de Cuenta</h1>
+
+        <p class="font-bold">Para restablecer la contraseña, escribe tu número de Identificación:</p>
+
+        <!-- Campo de Identificación -->
+        <div class="form-floating mb-4">
+            <input type="number" class="form-control" id="cedula" name="cedula" aria-label="Ingrese Identificación"
+                value="305060325" required>
+            <label for="cedula">Identificación :</label>
+        </div>
+
+        <!-- reCAPTCHA -->
+        <div class="d-flex justify-content-center py-4">
+            <div class="g-recaptcha" data-sitekey="6LcY-XEqAAAAAKBuIIhJ-NMOul-iFOpAJHItTN7h"></div>
+        </div>
+
+        <!-- Botón de Enviar -->
+        <button class="btn btn-success w-100 py-2 fw-bold" type="submit">Recuperar Cuenta</button>
+    </form>
+</main>

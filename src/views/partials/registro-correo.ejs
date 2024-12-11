@@ -1,0 +1,43 @@
+<form action="/user/enviarCorreo" method="get" onsubmit="return confirmarClave();">
+    <div class="mb-4">
+        <label for="email" class="form-label text-secondary">Correo:</label>
+        <input type="email" class="form-control border-0 rounded-2" id="email" name="correo"
+            placeholder="Ingrese su correo" value="crbrandon97@gmail.com" required>
+    </div>
+
+    <div class="form-floating mb-4">
+        <input type="password" class="form-control" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{14,}"
+            title="Debe tener entre 14 y 20 caracteres, incluir al menos una letra mayúscula, una letra minúscula, un número y un carácter especial."
+            value="qewQ@dw23deaed" required>
+        <label for="psw">Contraseña:</label>
+    </div>
+
+    <div class="text-danger" id="message">
+        <h3>La contraseña debe contener:</h3>
+        <ul>
+            <li id="letter" class="invalid">Una <b>letra</b> minúscula</li>
+            <li id="capital" class="invalid">Una <b>letra</b> mayúscula</li>
+            <li id="number" class="invalid">Un <b>número</b></li>
+            <li id="length" class="invalid">Entre <b>14 y 20 caracteres</b></li>
+            <li id="special" class="invalid">Un <b>carácter especial</b></li>
+        </ul>
+    </div>
+
+    <div class="form-floating mb-4">
+        <input type="password" class="form-control rounded-2" id="confirmPsw" name="confirmPass"
+            placeholder="Ingrese su contraseña" autocomplete="off" value="qewQ@dw23deaeddd" required>
+        <label for="confirmPsw">Confirmar Contraseña:</label>
+    </div>
+
+    <hr class="text-light">
+
+    <div class="form-floating mb-5">
+        <input type="number" class="form-control" id="cedula" name="cedula" placeholder="Cédula" value="305060325"
+            required>
+        <label for="cedula">Cédula:</label>
+    </div>
+
+    <div class="d-grid gap-2">
+        <button class="btn btn-success fw-bold" type="submit">Continuar</button>
+    </div>
+</form>

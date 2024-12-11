@@ -1,0 +1,33 @@
+{
+  "name": "ecoenergy",
+  "version": "1.0.0",
+  "description": "Proyecto P-V",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Brandon",
+  "license": "ISC",
+  "dependencies": {
+    "@paypal/paypal-server-sdk": "^0.6.0",
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "checkout-sdk-node": "^2.2.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "framer-motion": "^11.13.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.11.3",
+    "nodemailer": "^6.9.15",
+    "nodemon": "^3.1.7",
+    "onborda": "^1.2.4",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.6.13",
+    "tailwindcss": "^3.4.16",
+    "workbox-webpack-plugin": "^7.3.0"
+  }
+}
